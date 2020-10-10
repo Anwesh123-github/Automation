@@ -32,19 +32,19 @@ public class JavaScriptScrollTest {
 
         Thread.sleep(3000);
 
-        //js.executeScript("window.scrollBy(0,1900);");
+       // js.executeScript("window.scrollBy(0,1900);");
 
-        //Thread.sleep(3000);
+       // Thread.sleep(3000);
 
-        //js.executeScript("window.scrollBy(0,-1900);");
-        //['Thread.sleep(2000);
+       // js.executeScript("window.scrollBy(0,-1900);");
+      //  Thread.sleep(2000);
 
         WebElement mousehover = driver.findElement(By.id("mousehover"));
 
         js.executeScript("arguments[0].scrollIntoView(true);",mousehover);
         Thread.sleep(2000);
 
-        js.executeScript("window.scrollBy(0,-190);");
+        //js.executeScript("window.scrollBy(0,-190);");
 
     }
 

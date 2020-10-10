@@ -18,7 +18,7 @@ public class ImplicitWatiDemo {
     public void setup() {
         System.setProperty("webdriver.chrome.driver", "C:\\Program Files (x86)\\chromedriver.exe");
         driver = new ChromeDriver();
-        //driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.get("https://letskodeit.teachable.com/");
         driver.manage().window().maximize();
     } //end of setup
@@ -31,6 +31,9 @@ public class ImplicitWatiDemo {
 
         WebElement username = driver.findElement(By.id("user_email"));
         username.sendKeys("testemail");
+
+        WebElement password = driver.findElement(By.xpath("//input[@id='user_password']"));
+        password.sendKeys("testpassword");
 
     } //end of test
 

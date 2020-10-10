@@ -51,7 +51,7 @@ public class ListOfElements {
 
                 Thread.sleep(5000);
 
-                if (checkboxbutton.getAttribute("id").contains("filter-price-£15 - £20-label")){
+                if (checkboxbutton.getText().contains("filter-price-£15 - £20-label")){
                     checkboxbutton.click();
                 }
 

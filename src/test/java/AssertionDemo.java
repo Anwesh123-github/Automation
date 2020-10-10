@@ -25,29 +25,40 @@ public class AssertionDemo {
         //driver.get("https://letskodeit.teachable.com/p/practice");
         //driver.get("https://www.argos.co.uk/");
         driver.get("https://www.argos.co.uk/search/nike/?clickOrigin=searchbar:home:term:nike");
+        driver.get("https://www.argos.co.uk/search/puma/?clickOrigin=searchbar:search:term:puma");
 
         driver.manage().window().maximize();
     } //end of setup
 
     @Test
 
-    public void argos(){
+    public void argos() {
 
         String actual = driver.getCurrentUrl();
-       Assert.assertThat(actual, Matchers.containsString("https://www.amazon.co.uk/"));
-       // Assert.assertThat(actual, Matchers.endsWith("argos.co.uk/"));
-       // Assert.assertThat(actual, Matchers.equalToIgnoringCase("https://www.argos.co.uk/"));
+        //Assert.assertThat(actual, Matchers.containsString("https://www.argos.co.uk/"));
+        // Assert.assertThat(actual, Matchers.endsWith("argos.co.uk/"));
+        Assert.assertThat(actual, Matchers.equalToIgnoringCase("https://www.argos.co.uk/"));
 
     }
 
     @Test
 
-    public void argos1(){
+    public void argos1() {
 
         WebElement header = driver.findElement(By.xpath("//div[@class='styles__SearchTitle-sc-1haccah-0 kAkKBD']"));
         String actual = header.getText();
-        Assert.assertThat(actual, Matchers.containsString("puma"));
+        Assert.assertThat(actual, Matchers.containsString("nike"));
 
     }
 
-} //end of class
+
+    @Test
+
+    public void argos2() {
+        WebElement bestresults = driver.findElement(By.xpath("//h1[contains(text(),'puma')]"));
+        String actual = bestresults.getText();
+        Assert.assertThat(actual,Matchers.containsString("puma"));
+
+    }
+
+}

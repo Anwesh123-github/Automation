@@ -42,7 +42,8 @@ public class Practise2 {
 
         driver.navigate().refresh();
 
-        driver.getTitle();
+        String Currenttitle = driver.getTitle();
+        System.out.println(Currenttitle);
 
 
         String CurrentURL = driver.getCurrentUrl();
