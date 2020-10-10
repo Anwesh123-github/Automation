@@ -36,7 +36,7 @@ public class AutoCompleteDropDown {
 
             Thread.sleep(5000);
 
-            if (departdropdown.getText().contains("London Heathrow Airport (LHR), UK"));{
+            if (departdropdown.getText().contains("London Heathrow Airport (LHR), UK")){
                 departdropdown.click();}
 
 

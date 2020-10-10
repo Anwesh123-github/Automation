@@ -47,7 +47,7 @@ public class MultipleSelect1 {
         List<WebElement> options = sel.getAllSelectedOptions();
 
         for (WebElement option : options) {
-            System.out.println(option.getText());
+           System.out.println(option.getText());
         } //for ends
 
     } //end of test

@@ -65,4 +65,25 @@ public class Keyboardpress {
 
     } //test ends
 
+
+    @Test
+
+    public void combinekeypress2() throws InterruptedException {
+        WebElement curraddress = driver.findElement(By.xpath("//textarea[@id='currentAddress']"));
+        WebElement peraddress = driver.findElement(By.xpath("//textarea[@id='permanentAddress']"));
+
+        Actions actions = new Actions(driver);
+
+        actions.click(curraddress).sendKeys("3 the close,new").perform();
+
+        Thread.sleep(5000);
+        actions.keyDown(curraddress,Keys.CONTROL).sendKeys("a").keyUp(Keys.CONTROL).perform();
+
+        actions.keyDown(Keys.CONTROL).sendKeys("c").keyUp(peraddress,Keys.CONTROL).perform();
+
+        Thread.sleep(5000);
+        actions.keyDown(Keys.CONTROL).sendKeys("v").keyUp(Keys.CONTROL).perform();
+
+    }
+
 } //end of class
